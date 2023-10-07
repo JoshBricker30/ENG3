@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 import time
-import board
+import board 
 from rainbowio import colorwheel
 import neopixel
 
