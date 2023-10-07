@@ -1,7 +1,6 @@
 import time
 import board
 import adafruit_hcsr04
-from rainbowio import colorwheel
 import neopixel
 
 sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D7, echo_pin=board.D6)
@@ -18,8 +17,12 @@ while True:
         print(cm)                 
         if(cm < 5):
             pixels.fill((255, 0, 0))
-        elif(cm > 35):   
-            pixels.fill((0, 255, 0))
+        elif(cm < 20): # Blend between red and blue
+            weight = map(cm, 5, 20, 0, 255)
+            pixels.fill((255, weight, weight))
+        elif(cm > 35): # Blend between blue and green 
+            weight = map(cm, 20, 35, 0, 255)
+            pixels.fill((weight, 255, 255 - weight))
         else:
             pixels.fill((0, 0, 255))
         pixels.show()
