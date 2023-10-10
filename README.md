@@ -4,7 +4,7 @@
 * [Table of Contents](#TableOfContents)
 * [Ultrasonic_Distance_Sensor](#Ultrasonic_Distance_Sensor)
 * [Motor_Control](#Motor_Control)
-* [CircuitPython_LCD](#CircuitPython_LCD)
+* [Hanger_Bracket](#CircuitPython_LCD)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -119,7 +119,7 @@ Made in Fritzing
 The most challenging part of the assignment by far was wiring. I learned that it's better to do the wiring modularly, instead of trying to wire everything at once; for instance, the potentiometer can be treated as a separate unit both code and wiring-wise. I did not realize the Mosfet Transistor's direction mattered - I was confused to why the motor was not running. Paul helped me debug my wiring, seeing that the Mosfet was flipped. This showed me that understanding what the parts of your system does is important, instead of blindly copying wiring diagrams from the internet. Additionally, I had many issues with controlling voltage. I had heard that the DC Motors could run with 9 Volts, and assumed that this fact held in this system. However, because we have a Mosfet transistor in the circuit, we should only use 6 Volts. The burning at the bottom of the Metro board signalled to me the severe voltage issue. In the future, I should try to thoroughly understand the mechanisms of new components so that I can properly debug and wire them up.
 
 
-## Onshape_Assignment_Template
+## Hanger_Bracket
 
 ### Assignment Description
 
@@ -127,9 +127,9 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Evidence
 
-![Isometric View of Hanger Bracket](./images/IsometricHanger.png)
-![Top View](./images/TopHanger.png)
-![Side View](./images/SideHanger.png)
+![Isometric View of Hanger Bracket](./images/IsometricHanger.PNG)
+![Top View](./images/TopHanger.PNG)
+![Side View](./images/SideHanger.PNG)
 
 ### Part Link 
 
@@ -137,7 +137,8 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Reflection
 
-We had previously done multiple practice Onshape assignments based purely on drawings in Engineering II, so I felt prepared for this assignment. 
+We had previously done multiple practice Onshape assignments based purely on drawings in Engineering II, so I felt prepared for this assignment. However, there is always room for improvement to optimally create these parts, as the test requires not only accuracy but speed. Mr. Dierolf suggested that instead of creating the entire side profile, and manually mirroring every feature, we should create half of the part and then mirror the part. This saved both time and hassle. I also practiced good modeling habits by making use of constraints instead of extraneously dimensioning. From working with Mercedes, I realized that the best method to create the hole was not to draw the circle first, and then the rectangle, but draw a rectangle symmetric around the center line and create a circle centered on the right edge. Both of us were able to create an efficient hole!
+
 &nbsp;
 
 
