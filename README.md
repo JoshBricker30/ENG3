@@ -112,7 +112,7 @@ Controlling the speed of our DC motor w/ PWM involves suppling a series of high 
 
 
 ### Wiring
-![Motor Control Wiring Diagram](./images/MotorControlWiring.png)
+![Distance GIF](./images/motorgif.gif)
 Made in Fritzing
 
 ### Reflection
@@ -127,13 +127,30 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Evidence
 
-![Isometric View of Hanger Bracket](./images/IsometricHanger.PNG)
-![Top View](./images/TopHanger.PNG)
-![Side View](./images/SideHanger.PNG)
+<table>
+  <tr>
+    <td>
+      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <br>
+      <i>Isometric View of Hanger Bracket</i>
+    </td>
+    <td>
+      <img src="./images/SideHanger.PNG" alt="Side View">
+      <br>
+      <i>Side View</i>
+    </td>
+    <td>
+      <img src="./images/TopHanger.PNG" alt="Top View">
+      <br>
+      <i>Top View</i>
+    </td>
+  </tr>
+</table>
+
 
 ### Part Link 
 
-[Link to Onshape Document:]([https://cvilleschools.onshape.com/documents/003e413cee57f7ccccaa15c2/w/ea71050bb283bf3bf088c96c/e/c85ae532263d3b551e1795d0?renderMode=0&uiState=62d9b9d7883c4f335ec42021](https://cvilleschools.onshape.com/documents/b67a1cbdc4ed63f9002ebb08/w/293d5130df730dbda2e77585/e/f1a428b62fae888cdf29c451?renderMode=0&uiState=65256c8dc3bf36111c9e574c)).
+[Link to Onshape Document:](https://cvilleschools.onshape.com/documents/b67a1cbdc4ed63f9002ebb08/w/293d5130df730dbda2e77585/e/f1a428b62fae888cdf29c451?renderMode=0&uiState=65256c8dc3bf36111c9e574c)
 
 ### Reflection
 
