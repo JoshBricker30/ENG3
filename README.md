@@ -4,7 +4,7 @@
 * [Table of Contents](#TableOfContents)
 * [Ultrasonic_Distance_Sensor](#Ultrasonic_Distance_Sensor)
 * [Motor_Control](#Motor_Control)
-* [Hanger_Bracket](#CircuitPython_LCD)
+* [Hanger_Bracket](#Hanger_Bracket)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -116,7 +116,7 @@ Controlling the speed of our DC motor w/ PWM involves suppling a series of high 
 Made in Fritzing
 
 ### Reflection
-The most challenging part of the assignment by far was wiring. I learned that it's better to do the wiring modularly, instead of trying to wire everything at once; for instance, the potentiometer can be treated as a separate unit both code and wiring-wise. I did not realize the Mosfet Transistor's direction mattered - I was confused to why the motor was not running. Paul helped me debug my wiring, seeing that the Mosfet was flipped. This showed me that understanding what the parts of your system does is important, instead of blindly copying wiring diagrams from the internet. Additionally, I had many issues with controlling voltage. I had heard that the DC Motors could run with 9 Volts, and assumed that this fact held in this system. However, because we have a Mosfet transistor in the circuit, we should only use 6 Volts. The burning at the bottom of the Metro board signalled to me the severe voltage issue. In the future, I should try to thoroughly understand the mechanisms of new components so that I can properly debug and wire them up.
+The most challenging part of the assignment by far was wiring. I learned that it's better to do the wiring modularly, instead of trying to wire everything at once; for instance, the potentiometer can be treated as a separate unit both code and wiring-wise. I did not realize the Mosfet Transistor's direction mattered - I was confused to why the motor was not running. Paul helped me debug my wiring, seeing that the Mosfet was flipped. This showed me that understanding what the parts of your system does is important, instead of blindly copying wiring diagrams from the internet. Additionally, I had many issues with controlling voltage. I had heard that the DC Motors could run with 9 Volts, and assumed that this fact held in this system. However, because we have a Mosfet transistor in the circuit, we should only use 6 Volts. The burning at the bottom of the Metro board signalled to me the severe voltage issue. In the future, I should try to thoroughly understand the mechanisms of new components so that I can properly debug and wire them up. I used Fritzing instead of TinkerCAD as Fritzing has all the parts needed.
 
 
 ## Hanger_Bracket
@@ -150,11 +150,11 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Part Link 
 
-[Link to Onshape Document:](https://cvilleschools.onshape.com/documents/b67a1cbdc4ed63f9002ebb08/w/293d5130df730dbda2e77585/e/f1a428b62fae888cdf29c451?renderMode=0&uiState=65256c8dc3bf36111c9e574c)
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/b67a1cbdc4ed63f9002ebb08/w/293d5130df730dbda2e77585/e/f1a428b62fae888cdf29c451?renderMode=0&uiState=65256c8dc3bf36111c9e574c)
 
 ### Reflection
 
-We had previously done multiple practice Onshape assignments based purely on drawings in Engineering II, so I felt prepared for this assignment. However, there is always room for improvement to optimally create these parts, as the test requires not only accuracy but speed. Mr. Dierolf suggested that instead of creating the entire side profile, and manually mirroring every feature, we should create half of the part and then mirror the part. This saved both time and hassle. I also practiced good modeling habits by making use of constraints instead of extraneously dimensioning. From working with Mercedes, I realized that the best method to create the hole was not to draw the circle first, and then the rectangle, but draw a rectangle symmetric around the center line and create a circle centered on the right edge. Both of us were able to create an efficient hole!
+We had previously done multiple practice Onshape assignments based purely on drawings in Engineering II, so I felt prepared for this assignment. However, there is always room for improvement to optimally create these parts, as the test requires not only accuracy but speed. Mr. Dierolf suggested that instead of creating the entire side profile, and manually mirroring every feature, we should create half of the part and then mirror the part. This saved both time and hassle. I also practiced good modeling habits by making use of constraints instead of extraneously dimensioning. From working with Mercedes, I realized that the best method to create the hole was not to draw the circle first, and then the rectangle, but draw a rectangle symmetric around the center line and create a circle centered on the right edge. Both of us were able to create an efficient hole! I also learned how to use HTML tables to create more aesthetic image placement, as seen above. 
 
 &nbsp;
 
