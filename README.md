@@ -13,11 +13,60 @@
 ### Description & Code
 For this assignment, we had to use an HC-SRO4 (ultrasonic sensor) to measure the distance to an object an then print out that value to the serial monitor. Then, we coded the neopixel to change color based on the distance; it should turn red when the object is less than 5cm aways, and green when its above 35 cm. In between, the color should be based on the gradient below:
 ![Gradient](./images/Gradient.png)
+My code is below:
 ```python
-Code goes here
+import time
+import board
+import adafruit_hcsr04
+import neopixel
 
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D7, echo_pin=board.D6) # Init ultrasonic sensor
+
+# Set up NeoPixel
+NUMPIXELS = 1  
+BRIGHTNESS = 0.2  
+PIN = board.NEOPIXEL  
+pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)
+
+# Mapping function to convert x from input range to corresponding value in output range
+# x: value wanted to map | in_min & in_max: input range of x | out_min & out_max: output range
+def map_value(x, in_min, in_max, out_min, out_max):
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+
+while True:
+    try:
+        cm = sonar.distance # receive ultrasonic distance
+        print(cm)                 
+        if(cm < 5): # Below 5, keep red
+            pixels.fill((255, 0, 0))
+        elif(cm < 20): # Blend between red and blue
+            ratio = map_value(cm, 5, 20, 0, 1) #ratio of r:b
+            r = int(255 * (1 - ratio))
+            b = int(255 * ratio)
+            pixels.fill((r, 0, b))
+        elif(cm < 35): # Blend between blue and green 
+            ratio = map_value(cm, 20, 35, 0, 1) #ratio of b:g
+            b = int(255 * (1 - ratio))
+            g = int(255 * ratio)
+            pixels.fill((0, g, b))
+        else: # Above 35, keep green
+            pixels.fill((0, 255, 0))
+        pixels.show()
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
 ```
+How the logic of the mapping code works:
+1. ```(x-in_min)``` shifts the distance x so that the lower bound of the input distance range becomes 0
+2. ```(out_max-out_min)/(in_max-in_min)``` is the scaling factor between the two ranges, and shifts the value of 'x' to be scaled to output range
+3. ```+ out_min``` shifts the value so that it starts at lower bound of output range
 
+How the logic of the gradient works:
+1. ```ratio = map_value(cm, 5, 20, 0, 1)``` calculates the scaling factor between the distance and color range
+2. ```b = int(255 * ratio)``` calculates value of blue based on ratio (as distances increases, blue intensity increases)
+3. ```r = int(255 * (1 - ratio))``` calculates value of red based on opposite ratio (as distance increases, red intensity decreases)
+
+Inspiration: https://stackoverflow.com/questions/1969240/mapping-a-range-of-values-to-another
 ### Evidence
 
 ### Wiring
@@ -74,9 +123,9 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Evidence
 
-![Isometric View of Hanger Bracket](./images/IsometricHanger.png)
-![Top View](./images/TopHanger.png)
-![Side View](./images/SideHanger.png)
+![Isometric View of Hanger Bracket](./images/IsometricHanger.PNG)
+![Top View](./images/TopHanger.PNG)
+![Side View](./images/SideHanger.PNG)
 
 ### Part Link 
 
