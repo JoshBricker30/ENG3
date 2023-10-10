@@ -74,7 +74,8 @@ Inspiration: https://stackoverflow.com/questions/1969240/mapping-a-range-of-valu
 ![Distance GIF](./images/distancegif.gif)
 
 ### Wiring
-![Ultrasonic Distance Sensor Wiring](./images/UltrasonicWiring.png)
+<img src="./images/UltrasonicWiring.png" alt="Ultrasonic Wiring" width="50%">
+
 ### Reflection
 The wiring for the ulrasonic distance sensor was easy; only four wires directly to the metro board were needed. However, running successfull code proved much more challenging. I had a multitude of issues trying to receive data from the ultrasonic sensor. We then learned that we had to change all the libraries to be compatible with the ultrasonic sensor, changing the version from CircuitPython 8 to 7. The second part that was challenging with code was making a working NeoPixel gradient that corresponded with the distance. 
 I consulted the Internet to see the best way to map values in CircuitPython. I did not find any useful built-in functions, but I did find the stackoverflow link below: 
@@ -106,13 +107,12 @@ Controlling the speed of our DC motor w/ PWM involves suppling a series of high 
 ### Evidence
 
 
-![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
-
+![Distance GIF](./images/motorgif.gif)
 
 
 
 ### Wiring
-![Distance GIF](./images/motorgif.gif)
+<img src="./images/MotorControlWiring.png" alt="Motor Control Wiring" width="75%">
 Made in Fritzing
 
 ### Reflection
