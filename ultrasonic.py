@@ -3,28 +3,37 @@ import board
 import adafruit_hcsr04
 import neopixel
 
-sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D7, echo_pin=board.D6)
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D7, echo_pin=board.D6) # Init ultrasonic sensor
 
-NUMPIXELS = 1  # Update this to match the number of LEDs.
-BRIGHTNESS = 0.2  # A number between 0.0 and 1.0, where 0.0 is off, and 1.0 is max.
-PIN = board.NEOPIXEL  # This is the default pin on the 5x5 NeoPixel Grid BFF.
-
+# Set up NeoPixel
+NUMPIXELS = 1  
+BRIGHTNESS = 0.2  
+PIN = board.NEOPIXEL  
 pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)
+
+# Mapping function to convert x from input range to corresponding value in output range
+# x: value wanted to map | in_min & in_max: input range of x | out_min & out_max: output range
+def map_value(x, in_min, in_max, out_min, out_max):
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
 while True:
     try:
-        cm = sonar.distance
+        cm = sonar.distance # receive ultrasonic distance
         print(cm)                 
-        if(cm < 5):
+        if(cm < 5): # Below 5, keep red
             pixels.fill((255, 0, 0))
         elif(cm < 20): # Blend between red and blue
-            weight = map(cm, 5, 20, 0, 255)
-            pixels.fill((255, weight, weight))
-        elif(cm > 35): # Blend between blue and green 
-            weight = map(cm, 20, 35, 0, 255)
-            pixels.fill((weight, 255, 255 - weight))
-        else:
-            pixels.fill((0, 0, 255))
+            ratio = map_value(cm, 5, 20, 0, 1) #ratio of r:b
+            r = int(255 * (1 - ratio))
+            b = int(255 * ratio)
+            pixels.fill((r, 0, b))
+        elif(cm < 35): # Blend between blue and green 
+            ratio = map_value(cm, 20, 35, 0, 1) #ratio of b:g
+            b = int(255 * (1 - ratio))
+            g = int(255 * ratio)
+            pixels.fill((0, g, b))
+        else: # Above 35, keep green
+            pixels.fill((0, 255, 0))
         pixels.show()
     except RuntimeError:
         print("Retrying!")
