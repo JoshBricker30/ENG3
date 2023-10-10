@@ -2,13 +2,13 @@
 
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
-* [Ultrasonic Sensor](#Ultrasonic Sensor)
+* [Ultrasonic_Distance_Sensor](#Ultrasonic_Distance_Sensor)
 * [Motor_Control](#Motor_Control)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
-## Ultrasonic Sensor
+## Ultrasonic_Distance_Sensor
 
 ### Description & Code
 For this assignment, we had to use an HC-SRO4 (ultrasonic sensor) to measure the distance to an object an then print out that value to the serial monitor. Then, we coded the neopixel to change color based on the distance; it should turn red when the object is less than 5cm aways, and green when its above 35 cm. In between, the color should be based on the gradient below:
