@@ -13,7 +13,7 @@
 ### Description & Code
 For this assignment, we had to use an HC-SRO4 (ultrasonic sensor) to measure the distance to an object an then print out that value to the serial monitor. Then, we coded the neopixel to change color based on the distance; it should turn red when the object is less than 5cm aways, and green when its above 35 cm. In between, the color should be based on the gradient below:
 ![Gradient](./images/Gradient.png)
-My code is below:
+Here is my code:
 ```python
 import time
 import board
@@ -56,18 +56,22 @@ while True:
         print("Retrying!")
     time.sleep(0.1)
 ```
-How the logic of the mapping code works:
+Here's the logic of the mapping code:
 1. ```(x-in_min)``` shifts the distance x so that the lower bound of the input distance range becomes 0
-2. ```(out_max-out_min)/(in_max-in_min)``` is the scaling factor between the two ranges, and shifts the value of 'x' to be scaled to output range
-3. ```+ out_min``` shifts the value so that it starts at lower bound of output range
+2. ```(out_max-out_min)/(in_max-in_min)``` calculates the scaling factor between the distance and color range; this is multiplied by the distance x to shift it into output scale
+3. ```+ out_min``` shifts the value so that it starts at the lower bound of the output range
 
-How the logic of the gradient works:
-1. ```ratio = map_value(cm, 5, 20, 0, 1)``` calculates the scaling factor between the distance and color range
-2. ```b = int(255 * ratio)``` calculates value of blue based on ratio (as distances increases, blue intensity increases)
-3. ```r = int(255 * (1 - ratio))``` calculates value of red based on opposite ratio (as distance increases, red intensity decreases)
+Here's the logic of the gradient code:
+1. ```ratio = map_value(cm, 5, 20, 0, 1)``` calculates the mentioned scaling factor to proportionally map the distance to corresponding color
+2. ```b = int(255 * ratio)``` calculates the blue value such that as the distance increases from 5 to 20, the blue intensity increases
+3. ```r = int(255 * (1 - ratio))``` calculates the red value based on the opposite ratio so that as the distance increases, the red intensity increases
+
+The gradient code works such that if cm = 5, 'ratio' will be 0 and there will be no blue, only red. If cm = 20, 'ratio' will be 1, meaning there will be no red, all blue. 
 
 Inspiration: https://stackoverflow.com/questions/1969240/mapping-a-range-of-values-to-another
+
 ### Evidence
+![Distance GIF](./images/distancegif.gif)
 
 ### Wiring
 ![Ultrasonic Distance Sensor Wiring](./images/UltrasonicWiring.png)
@@ -123,9 +127,9 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Evidence
 
-![Isometric View of Hanger Bracket](./images/IsometricHanger.PNG)
-![Top View](./images/TopHanger.PNG)
-![Side View](./images/SideHanger.PNG)
+![Isometric View of Hanger Bracket](./images/IsometricHanger.png)
+![Top View](./images/TopHanger.png)
+![Side View](./images/SideHanger.png)
 
 ### Part Link 
 
