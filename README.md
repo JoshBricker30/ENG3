@@ -1,25 +1,54 @@
-# CircuitPython
-This repository will actually serve as an aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+# Engineering 3 Documentation 
+
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
-* [Hello_CircuitPython](#Hello_CircuitPython)
-* [CircuitPython_Servo](#CircuitPython_Servo)
+* [Ultrasonic_Distance_Sensor](#Ultrasonic_Distance_Sensor)
+* [Motor_Control](#Motor_Control)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
-## Hello_CircuitPython
+## Ultrasonic_Distance_Sensor
 
 ### Description & Code
-Description goes here
-
-Here's how you make code look like code:
-
+For this assignment, we had to use an HC-SRO4 (ultrasonic sensor) to measure the distance to an object an then print out that value to the serial monitor. Then, we coded the neopixel to change color based on the distance; it should turn red when the object is less than 5cm aways, and green when its above 35 cm. In between, the color should be based on the gradient below:
+![Gradient](./images/Gradient.png)
 ```python
 Code goes here
 
 ```
 
+### Evidence
+
+### Wiring
+![Ultrasonic Distance Sensor Wiring](./images/UltrasonicWiring.png)
+### Reflection
+The wiring for the ulrasonic distance sensor was easy; only four wires directly to the metro board were needed. However, running successfull code proved much more challenging. I had a multitude of issues trying to receive data from the ultrasonic sensor. We then learned that we had to change all the libraries to be compatible with the ultrasonic sensor, changing the version from CircuitPython 8 to 7. The second part that was challenging with code was making a working NeoPixel gradient that corresponded with the distance. 
+I consulted the Internet to see the best way to map values in CircuitPython. I did not find any useful built-in functions, but I did find the stackoverflow link below: 
+https://stackoverflow.com/questions/1969240/mapping-a-range-of-values-to-another 
+The map code function looked complicated, so I wrote some examples to help me illustrate the underlying concepts better. Essentially, we shift the input range to start at 0, multiply the new x value by the ratio of the ranges, and then shift x to start at the true output range. Gudrun also helped me understand the intuition behind the gradient, spliting it up as a red-blue gradient from 5-20 cm and a blue-green gradient from 20-35cm. 
+
+## Motor_Control
+
+### Description & Code
+For this assignment, we had to wire up a DC motor with a 6V battery pack, transistor, and diode. Then, we had to write CircuitPython code to make the motor speed up and slow down relative to the potentiometer value. 
+
+Here is the code to control the motor based on potentiometer value:
+
+```python
+import board
+from analogio import AnalogIn
+import pwmio
+
+potentiometer = AnalogIn(board.A5) # Init potentiometer 
+motor_speed_control = pwmio.PWMOut(board.D13) # Set up PWM signal
+
+while True:
+    pot_position = potentiometer.value # Read current potentiometer value
+    print((pot_position))
+    motor_speed_control.duty_cycle = pot_position # Adjust motors speed
+```
+Controlling the speed of our DC motor w/ PWM involves suppling a series of high and low pulses to the motor. The key parameter, 'duty_cycle,' defines how much of one period the signal is "high" vs low. Higher duty cycle means faster-running motor. 
 
 ### Evidence
 
@@ -27,88 +56,39 @@ Code goes here
 ![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
 
 
-And here is how you should give image credit to someone if you use their work:
-
-Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
-
 
 
 ### Wiring
-Make an account with your Google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
-Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+![Motor Control Wiring Diagram](./images/MotorControlWiring.png)
+Made in Fritzing
 
 ### Reflection
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience?  Your ultimate goal for the reflection is to pass on the knowledge that will make this assignment better or easier for the next person.
+The most challenging part of the assignment by far was wiring. I learned that it's better to do the wiring modularly, instead of trying to wire everything at once; for instance, the potentiometer can be treated as a separate unit both code and wiring-wise. I did not realize the Mosfet Transistor's direction mattered - I was confused to why the motor was not running. Paul helped me debug my wiring, seeing that the Mosfet was flipped. This showed me that understanding what the parts of your system does is important, instead of blindly copying wiring diagrams from the internet. Additionally, I had many issues with controlling voltage. I had heard that the DC Motors could run with 9 Volts, and assumed that this fact held in this system. However, because we have a Mosfet transistor in the circuit, we should only use 6 Volts. The burning at the bottom of the Metro board signalled to me the severe voltage issue. In the future, I should try to thoroughly understand the mechanisms of new components so that I can properly debug and wire them up.
 
 
+## Onshape_Assignment_Template
 
+### Assignment Description
 
-## How To Fix the LCD power issue with Metro M4 boards.
-
-### Description & Code
-
-* **The symptoms:**  LCD acting weird OR trouble with usb connection / serial monitor / uploading / etc.
-* **The problem :** The LCDs occasionally draw too much power when we turn on the boards, and that makes parts of its serial communications crash.
-* **The Solution:** Add this code, and wire a switch up, like the wiring diagram below:
-
-
-
-```python
-import board
-import time
-import digitalio
-from lcd.lcd import LCD
-from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
-
-# turn on lcd power switch pin
-lcdPower = digitalio.DigitalInOut(board.D8)
-lcdPower.direction = digitalio.Direction.INPUT
-lcdPower.pull = digitalio.Pull.DOWN
-
-# Keep the I2C protocol from running until the LCD has been turned on
-# You need to flip the switch on the breadboard to do this.
-while lcdPower.value is False:
-    print("still sleeping")
-    time.sleep(0.1)
-
-# Time to start up the LCD!
-time.sleep(1)
-print(lcdPower.value)
-print("running")
-
-i2c = board.I2C()
-lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
-
-
-# Loop forever.
-while True:
-
-```
-### Wiring
-
-![WiringSolution](images/I2C_M4_Solution.png)
-
-
-
-
-
-
-## CircuitPython_LCD
-
-### Description & Code
-
-```python
-Code goes here
-
-```
+In our first Onshape assignment, we had to create a hanger bracket merely from drawings, with no supplemental instructions. We had 3 views available: the top, side, and isometric view. This was also practice for me on what view to choose to start your first sketch on; because of the side looks concave while the top drawing is rectangular, it made sense to start with the side view. 
 
 ### Evidence
 
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+![Isometric View of Hanger Bracket](./images/IsometricHanger.png)
+![Top View](./images/TopHanger.png)
+![Side View](./images/SideHanger.png)
 
-### Wiring
+### Part Link 
+
+[Link to Onshape Document:]([https://cvilleschools.onshape.com/documents/003e413cee57f7ccccaa15c2/w/ea71050bb283bf3bf088c96c/e/c85ae532263d3b551e1795d0?renderMode=0&uiState=62d9b9d7883c4f335ec42021](https://cvilleschools.onshape.com/documents/b67a1cbdc4ed63f9002ebb08/w/293d5130df730dbda2e77585/e/f1a428b62fae888cdf29c451?renderMode=0&uiState=65256c8dc3bf36111c9e574c)).
 
 ### Reflection
+
+We had previously done multiple practice Onshape assignments based purely on drawings in Engineering II, so I felt prepared for this assignment. 
+&nbsp;
+
+
+
 
 
 
@@ -128,37 +108,4 @@ Code goes here
 ### Wiring
 
 ### Reflection
-# CPyProjectTemplate
-Put a description for your project here!
-This repo is a template VS code project for CircuitPython projects that automatically uploads your code to the board when you press F5. Requires F5Anything extension.
-## What does this do?
-This makes it easirt to develop for boards like 
-## Use
-### Every new project:
-1. Make a GitHub account if you don't have one with your normal school credentials and sign into it.
-2. Click the big green Use This Template button at the top of this page.
-3. Name the new repository something appropriate to the purpose of your project (Your first one should probably be named `Engr3`).
-4. Hit "Create repository from template." (The default settings should be fine.)
-5. Open VS Code on your machine. Click Clone Repository. If it doesn't show up, hit Ctrl+Shift+P and then type Clone, then hit Enter.
-6. Paste in the link to the new repository you've just created from the template and hit enter.
-7. For the location, Documents folder.
-8. Hit "Open Cloned Directory" in the bottom-left corner.
-9. Install the reccomended extensions when you get that popup in the lower right corner. IF the pop-up dissapears before you can click it, hit the tiny bell icon in the lower left corner to bring it back.
-### To commit from VS Code:
-1. Go to the little branch icon in the left bar of VS Code.
-2. Click the + icon next to the files you want to commit.
-3. Write a message that descibes your changes in the "Message" box and hit commit.
-4. If you get an error about user.name and user.email, see the next section.
-5. Click the "Sync changes" button.
-### If you get an error about user.name and user.email
-1. In VS Code, hit `` Ctrl+Shift+` ``
-2. Filling in your actual information, run the following commands one line at a time. The paste shortcut is `Ctrl+V` or you can right click then hit paste. Spelling must match exactly:
-```
-git config --global user.name YOURGITHUBUSERNAME
-git config --global user.email YOURSCHOOLEMAIL
-```
-3. Return to the previous section.
-### To install a library:
-1. Get the library files from the Adafruit bundle (probably a .mpy file or a folder.)
-2. Copy them to the lib folder *in your project's folder, usually in Documents.* **Don't copy to the lib folder on the board! It will not work!**
-3. Hit F5 and the library will be uplaoded to the board.
+
