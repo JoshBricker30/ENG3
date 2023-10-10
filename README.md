@@ -8,6 +8,23 @@
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
+## Ultrasonic Sensor
+
+### Description & Code
+For this assignment, we had to use an HC-SRO4 (ultrasonic sensor) to measure the distance to an object an then print out that value to the serial monitor. Then, we coded the neopixel to change color based on the distance; it should turn red when the object is less than 5cm aways, and green when its above 35 cm. In between, the color should be based on the gradient below:
+![Gradient](./images/Gradient.png)
+```python
+Code goes here
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+
+
 ## Motor_Control
 
 ### Description & Code
@@ -43,8 +60,8 @@ Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlyb
 
 
 ### Wiring
-Make an account with your Google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
-Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+![Motor Control Wiring Diagram](./images/MotorControlWiring.png)
+Made in Fritzing
 
 ### Reflection
 The most challenging part of the assignment by far was wiring. I learned that it's better to do the wiring modularly, instead of trying to wire everything at once; for instance, the potentiometer can be treated as a separate unit both code and wiring-wise. 
@@ -55,22 +72,7 @@ What went wrong / was challenging, how'd you figure it out, and what did you lea
 
 
 
-## CircuitPython_LCD
 
-### Description & Code
-
-```python
-Code goes here
-
-```
-
-### Evidence
-
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
-
-### Wiring
-
-### Reflection
 
 
 
