@@ -5,6 +5,7 @@
 * [Ultrasonic_Distance_Sensor](#Ultrasonic_Distance_Sensor)
 * [Motor_Control](#Motor_Control)
 * [Hanger_Bracket](#Hanger_Bracket)
+* [Swing_Arm](#Swing_Arm)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -155,6 +156,40 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 ### Reflection
 
 We had previously done multiple practice Onshape assignments based purely on drawings in Engineering II, so I felt prepared for this assignment. However, there is always room for improvement to optimally create these parts, as the test requires not only accuracy but speed. Mr. Dierolf suggested that instead of creating the entire side profile, and manually mirroring every feature, we should create half of the part and then mirror the part. This saved both time and hassle. I also practiced good modeling habits by making use of constraints instead of extraneously dimensioning. From working with Mercedes, I realized that the best method to create the hole was not to draw the circle first, and then the rectangle, but draw a rectangle symmetric around the center line and create a circle centered on the right edge. Both of us were able to create an efficient hole! I also learned how to use HTML tables to create more aesthetic image placement, as seen above. 
+
+## Swing_Arm
+
+### Assignment Description
+
+### Evidence
+
+<table>
+  <tr>
+    <td>
+      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <br>
+      <i>Isometric View of Hanger Bracket</i>
+    </td>
+    <td>
+      <img src="./images/SideHanger.PNG" alt="Side View">
+      <br>
+      <i>Side View</i>
+    </td>
+    <td>
+      <img src="./images/TopHanger.PNG" alt="Top View">
+      <br>
+      <i>Top View</i>
+    </td>
+  </tr>
+</table>
+
+
+### Part Link 
+
+[Link to Onshape Document] (https://cvilleschools.onshape.com/documents/672906f97ae1d055cf2d3e61/w/6dadd7e2d6761cce775b5b80/e/70dd84374060117a93b911c1?renderMode=0&uiState=652d53bff175cf7850ae8bbf)
+
+### Reflection
+
 
 &nbsp;
 
