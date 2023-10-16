@@ -151,7 +151,7 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Part Link 
 
-[Link to Onshape Document](https://cvilleschools.onshape.com/documents/b67a1cbdc4ed63f9002ebb08/w/293d5130df730dbda2e77585/e/f1a428b62fae888cdf29c451?renderMode=0&uiState=65256c8dc3bf36111c9e574c)
+[Link to Onshape Document] (https://cvilleschools.onshape.com/documents/672906f97ae1d055cf2d3e61/w/6dadd7e2d6761cce775b5b80/e/70dd84374060117a93b911c1?renderMode=0&uiState=652d53bff175cf7850ae8bbf) 
 
 ### Reflection
 
