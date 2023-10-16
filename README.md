@@ -166,19 +166,24 @@ We had previously done multiple practice Onshape assignments based purely on dra
 <table>
   <tr>
     <td>
-      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <img src="./images/Config1Isometric.png" alt="Config 1 Isometric">
       <br>
-      <i>Isometric View of Hanger Bracket</i>
+      <i>Config 1 Isometric</i>
     </td>
     <td>
-      <img src="./images/SideHanger.PNG" alt="Side View">
+      <img src="./images/Config1Side.png" alt="Config 1 Side">
       <br>
-      <i>Side View</i>
+      <i>Config 1 Side</i>
     </td>
     <td>
-      <img src="./images/TopHanger.PNG" alt="Top View">
+      <img src="./images/Config1Bottom.png" alt="Config 1 Bottom">
       <br>
-      <i>Top View</i>
+      <i>Config 1 Bottom</i>
+    </td>
+    <td>
+      <img src="./images/Config2Isometric.png" alt="Config 2 Isometric">
+      <br>
+      <i>Config 2 Isometric</i>
     </td>
   </tr>
 </table>
