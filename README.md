@@ -151,7 +151,7 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Part Link 
 
-[Link to Onshape Document] (https://cvilleschools.onshape.com/documents/672906f97ae1d055cf2d3e61/w/6dadd7e2d6761cce775b5b80/e/70dd84374060117a93b911c1?renderMode=0&uiState=652d53bff175cf7850ae8bbf) 
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/672906f97ae1d055cf2d3e61/w/6dadd7e2d6761cce775b5b80/e/70dd84374060117a93b911c1?renderMode=0&uiState=652d53bff175cf7850ae8bbf)
 
 ### Reflection
 
@@ -186,7 +186,8 @@ We had previously done multiple practice Onshape assignments based purely on dra
 
 ### Part Link 
 
-[Link to Onshape Document] (https://cvilleschools.onshape.com/documents/672906f97ae1d055cf2d3e61/w/6dadd7e2d6761cce775b5b80/e/70dd84374060117a93b911c1?renderMode=0&uiState=652d53bff175cf7850ae8bbf)
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/672906f97ae1d055cf2d3e61/w/6dadd7e2d6761cce775b5b80/e/70dd84374060117a93b911c1?renderMode=0&uiState=652d53bff175cf7850ae8bbf)
+
 
 ### Reflection
 
