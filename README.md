@@ -195,7 +195,7 @@ We had previously done multiple practice Onshape assignments based purely on dra
 
 
 ### Reflection
-
+I had many difficulties with obtaining the correct mass. For the longer configuration, I eventually decided to put both my and Gudrun's into the same assembley - while not the most honorable option, I was able to see my issue: one of my 
 
 &nbsp;
 
