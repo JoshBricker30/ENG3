@@ -163,8 +163,7 @@ We had previously done multiple practice Onshape assignments based purely on dra
 This is our second Onshape assignment, where we were given 2 pages of instructions and 4 drawings to create a Swing Arm part. Reminiscent of the true Onshape exam, we were told 3 values to change the dimensions of to test the mass of two configurations of the part. This ensures that the components are constrained correctly to one another; a fact that was not true in my case for the majority of the process, unfortunately. 
 
 Here is my main sketch, which as I described in the reflection, should've been broken up into multiple to modularize. 
-<img src="./images/swingarmdrawing.PNG" width="50%">
-<br>
+<img src="./images/swingarmdrawing.PNG" width="40%">
 <i>Main Swing Arm Drawing Sketch</i>
 
 ### Evidence
