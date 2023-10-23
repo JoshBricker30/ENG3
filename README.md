@@ -164,6 +164,7 @@ This is our second Onshape assignment, where we were given 2 pages of instructio
 
 Here is my main sketch, which as I described in the reflection, should've been broken up into multiple to modularize. 
 <img src="./images/swingarmdrawing.PNG" width="40%">
+<br>
 <i>Main Swing Arm Drawing Sketch</i>
 
 ### Evidence
