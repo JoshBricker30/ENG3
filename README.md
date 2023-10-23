@@ -163,7 +163,7 @@ We had previously done multiple practice Onshape assignments based purely on dra
 This is our second Onshape assignment, where we were given 2 pages of instructions and 4 drawings to create a Swing Arm part. Reminiscent of the true Onshape exam, we were told 3 values to change the dimensions of to test the mass of two configurations of the part. This ensures that the components are constrained correctly to one another; a fact that was not true in my case for the majority of the process, unfortunately. 
 
 Here is my main sketch, which as I described in the reflection, should've been broken up into multiple to modularize. 
-![Swing Arm Sketch](./images/swingarmdrawing.PNG)
+<img src="./images/swingarmdrawing.PNG" width="75%">
 
 ### Evidence
 
@@ -199,7 +199,7 @@ Here is my main sketch, which as I described in the reflection, should've been b
 
 
 ### Reflection
-I had many difficulties with obtaining the correct mass. For the longer configuration, I eventually decided to put both my and Gudrun's into the same assembley - while not the most honorable option, I was able to see my issue: one of the legs of my arm was constrained to the diameter of the cirlce, instead of to the dimension B. In the future, to debug in the case when the 1st configuration is correct but the 2nd is not, I recommend checking all the places where the variables affect first. I also had an issue when checking the 2nd configuration - as seen below, changing the B dimension would cause a divet to appear in the hinge. 
+I had many difficulties with obtaining the correct mass. For the longer configuration, I eventually decided to put both my and Gudrun's into the same assembley - while not the most honorable option, I was able to see my issue: one of the legs of my arm was constrained to the diameter of the circle, instead of to the dimension B. In the future, to debug in the case when the 1st configuration is correct but the 2nd is not, I recommend checking all the places where the variables affect first. I also had an issue when checking the 2nd configuration - as seen below, changing the B dimension would cause a divet to appear in the hinge. 
 
 The divet highlights the importance of good design practices; instead of making components needlessly interconnected, it's better to make the parts in a modular process. If I had done the circle hole on a different sketch, then the constriants wouldn't have freaked out. 
 
