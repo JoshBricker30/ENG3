@@ -1,13 +1,18 @@
 # Engineering 3 Documentation 
 
 ## Table of Contents
-* [Table of Contents](#TableOfContents)
+* [Servo Control](#Servo_Control)
 * [Ultrasonic_Distance_Sensor](#Ultrasonic_Distance_Sensor)
 * [Motor_Control](#Motor_Control)
 * [Hanger_Bracket](#Hanger_Bracket)
 * [Swing_Arm](#Swing_Arm)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
+
+## Servo_Control
+
+### Description & Code
+For this CircuitPython assignment, we had to first get a 180° micro servo to slowly sweep back and forth between 0 and 180°. Then, we had to use two buttons, one to sweep the servo in one direction, and the other to do the opposite. The button is a hold operation.
 
 ## Ultrasonic_Distance_Sensor
 
