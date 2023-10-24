@@ -12,7 +12,47 @@
 ## Servo_Control
 
 ### Description & Code
-For this CircuitPython assignment, we had to first get a 180° micro servo to slowly sweep back and forth between 0 and 180°. Then, we had to use two buttons, one to sweep the servo in one direction, and the other to do the opposite. The button is a hold operation.
+For this CircuitPython assignment, we had first to get a 180° micro servo to sweep back and forth between 0 and 180° slowly. Then, we had to use two buttons, one to sweep the servo in a clockwise direction and the other counterclockwise. The button operates by moving the servo for however long it is held, which makes the coding simpler as debouncing is not needed.
+
+Here is my code:
+```python
+import time
+import board
+import pwmio
+from adafruit_motor import servo
+from digitalio import DigitalInOut, Direction, Pull
+
+
+# Create a PWMOut object on Pin A2.
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+
+# Create a servo object, my_servo.
+servo1 = servo.Servo(pwm)
+
+button = DigitalInOut(board.D2)
+button.direction = Direction.INPUT
+button.pull = Pull.DOWN
+
+# Initialize Button2
+button2 = DigitalInOut(board.D5) 
+button2.direction = Direction.INPUT
+button2.pull = Pull.DOWN
+
+current_angle = 0  # Initialize the angle
+
+while True:
+    if button.value:  # Button1 is pressed, turn clockwise
+        current_angle += 10 
+        current_angle = max(0, min(180, current_angle)) # Range restrict because 180 servo
+        servo1.angle = current_angle # Set servo to calculated angle
+    time.sleep(0.01)  
+
+    if button2.value:  # Button2 is pressed, turn counterclockwise
+        current_angle -= 10
+        current_angle = max(0, min(180, current_angle))
+        servo1.angle = current_angle  
+    time.sleep(0.01)  
+```
 
 ## Ultrasonic_Distance_Sensor
 
