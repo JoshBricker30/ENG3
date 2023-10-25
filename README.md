@@ -58,7 +58,7 @@ while True:
 ![Servo GIF](./images/servoalexis.gif)
 
 ### Wiring
-<img src="./images/servowiring.png" width="100%">
+<img src="./images/servowiring.png" width="75%">
 
 ### Reflection
 As the first assignment intersecting Arduino wiring and CircuitPython, the task was relatively simple. I initially misunderstood the "Spicy" section as optional and made my own button configuration. In this situation, only one button was needed, and as you held the button the servo would sweep back and forth, automatically switching directions when hitting 0 or 180 degrees. Upon the comment that two buttons were needed, I still misunderstood and instead tried an overly complicated system where debouncing was needed, and by pressing the button the servo would do a full sweep in one direction. Mr. H helped me and Josh to understand the requirements, and the resulting code is much more concise and effective. 
