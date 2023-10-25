@@ -58,10 +58,10 @@ while True:
 ![Servo GIF](./images/servoalexis.gif)
 
 ### Wiring
-<img src="./images/servowiring.png" width="50%">
+<img src="./images/servowiring.png" width="100%">
 
 ### Reflection
-As the first assignment intersecting Arduino wiring and CircuitPython, the task was relatively simple. I initially misunderstood the "Spicy" section as optional and made my own button configuration. In this situation, only one button was needed, and as you held the button the servo would sweep back and forth, automatically switching directions when hitting 0 or 180 degrees. Upon the comment that two buttons were needed, I still misunderstood and instead tried an overly complicated system where debouncing was needed, and by pressing the button the servo would do a full sweep in one direction. Mr. H helped me and Josh to finally understand the requirements, and the resulting code is much more concise and effective. 
+As the first assignment intersecting Arduino wiring and CircuitPython, the task was relatively simple. I initially misunderstood the "Spicy" section as optional and made my own button configuration. In this situation, only one button was needed, and as you held the button the servo would sweep back and forth, automatically switching directions when hitting 0 or 180 degrees. Upon the comment that two buttons were needed, I still misunderstood and instead tried an overly complicated system where debouncing was needed, and by pressing the button the servo would do a full sweep in one direction. Mr. H helped me and Josh to understand the requirements, and the resulting code is much more concise and effective. 
 In my second configuration, I had much trouble with using the right conditionals. I didn't realize that if you initialize the button as a pull-up resistor as in the example I was referencing, then "button.value" will return true when pressed, which is counter-intuitive to me. I also didn't realize that if you wanted to switch to a pull-down resistor, a resistor is needed, and one end must go to GND to ensure the pin is pulled down to LOW when the button is not pressed. 
 
 ## Ultrasonic_Distance_Sensor
