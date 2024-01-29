@@ -262,7 +262,21 @@ The divet highlights the importance of good design practices; instead of making 
 
 &nbsp;
 
+## Photointerruptor
 
+### Description & Code
+Everytime the photointerruptor is triggered (optical switch activated by light blockage), I had to increment a counter and print the number to an LCD screen. 
+
+```python
+Code goes here
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
 
 
 
