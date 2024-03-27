@@ -333,9 +333,9 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Reflection
 
-This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. 
-I realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
-In the assembley, instead of manually creating and mating 4 instances of the bolt, I noticed that each one was spaced 90 degrees apart, so I learned how to use the Circular pattern tool and created 4 instances spaced 90 de
+This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. Additionally, I found that instead of sketching circles and extruding, using the revolve tool, even for shapes that aren't seemingly cylinders at first glance, was much neater; I ended up using 3 revolves in the project!
+I also realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
+Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances spaces.
 &nbsp;
 
 ## Photointerruptor
