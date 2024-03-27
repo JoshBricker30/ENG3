@@ -260,6 +260,82 @@ I had many difficulties with obtaining the correct mass. For the longer configur
 
 The divet highlights the importance of good design practices; instead of making components needlessly interconnected, it's better to make the parts in a modular process. If I had done the circle hole on a different sketch, then the constriants wouldn't have freaked out. 
 
+## Onshape Certification Prep Part 1 - Single Part
+
+### Assignment Description
+
+In our first Onshape assignment, we had to create a hanger bracket merely from drawings, with no supplemental instructions. We had 3 views available: the top, side, and isometric view. This was also practice for me on what view to choose to start your first sketch on; because of the side looks concave while the top drawing is rectangular, it made sense to start with the side view. 
+
+### Evidence
+
+<table>
+  <tr>
+    <td>
+      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <br>
+      <i>Isometric View of Hanger Bracket</i>
+    </td>
+    <td>
+      <img src="./images/SideHanger.PNG" alt="Side View">
+      <br>
+      <i>Side View</i>
+    </td>
+    <td>
+      <img src="./images/TopHanger.PNG" alt="Top View">
+      <br>
+      <i>Top View</i>
+    </td>
+  </tr>
+</table>
+
+
+### Part Link 
+
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/cd78b8fa1f4fae5e57aa9c82/w/e451815e3ceae4b1d9177709/e/d6cd4c60769dd8532e4bef87)
+
+### Reflection
+
+This assignment, while simple, was a good reminder that even though there are many different ways to build a part, there are methods that are much easier than others. For this assignment, I reaized I could expedite operations significantly if I built the part starting from the front view rather than the top; additionally, since the part is symmetric, I only needed to sketch the right part and I could mirror at the end for the complete structure. 
+While not recommended for the actual Onshape exam, I think the best way to do the multiple iterations of these parts is through configurations. As we can't check our answers after each question and submit them at all one go, if one of our earlier iterations turns out to be incorrect, I can easily revert back to an old configuration. 
+
+## Onshape Certification Prep Part 1 - Single Part
+
+### Assignment Description
+
+In our first Onshape assignment, we had to create a hanger bracket merely from drawings, with no supplemental instructions. We had 3 views available: the top, side, and isometric view. This was also practice for me on what view to choose to start your first sketch on; because of the side looks concave while the top drawing is rectangular, it made sense to start with the side view. 
+
+### Evidence
+
+<table>
+  <tr>
+    <td>
+      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <br>
+      <i>Isometric View of Hanger Bracket</i>
+    </td>
+    <td>
+      <img src="./images/SideHanger.PNG" alt="Side View">
+      <br>
+      <i>Side View</i>
+    </td>
+    <td>
+      <img src="./images/TopHanger.PNG" alt="Top View">
+      <br>
+      <i>Top View</i>
+    </td>
+  </tr>
+</table>
+
+
+### Part Link 
+
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/cd78b8fa1f4fae5e57aa9c82/w/e451815e3ceae4b1d9177709/e/d6cd4c60769dd8532e4bef87)
+
+### Reflection
+
+This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. 
+I realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
+In the assembley, instead of manually creating and mating 4 instances of the bolt, I noticed that each one was spaced 90 degrees apart, so I learned how to use the Circular pattern tool and created 4 instances spaced 90 de
 &nbsp;
 
 ## Photointerruptor
@@ -277,11 +353,56 @@ Code goes here
 ### Wiring
 
 ### Reflection
+Both the wiring and code were intuitive for our first CircuitPython assignment of the quarter. However, I ran into an issue where the LCD would show no output. I initially thought that it had to do with the contrast settings, but adjustment did nothing. I figured out that the system did not recognize the I2C address. To overcome this, I used code from here - https://learn.adafruit.com/scanning-i2c-addresses/circuitpython - to scan for I2C addresses to find where the LCD was at, which was 0x27. This scanning code will definitely help me find the correct I2C address in future assignments. 
 
+## Rotary Encoder & LCD
 
+### Description & Code
 
+```python
+Code goes here
 
+```
 
+### Evidence
+
+### Wiring
+
+### Reflection
+I remember doing this assignment last year - nevertheless, this proved to be the most difficult CircuitPython assignment so far. I ran into the same I2C issue as previous, but I was able to use the address finder to overcome that hurdle. The main obstacle was getting the menu index to iterate and output correctly. When I first printed the messages to the screen and I tried to move to the "go" option, "goution" would print out. I realized that I wasn't clearing the 2nd row when I switched states. For a workaround, I printed out the option along with 8 spaces to effectively clear the previous output. 
+
+## Stepper Motors & Limit Switches
+
+### Description & Code
+
+```python
+Code goes here
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+I struggled with regulating the voltage properly. Perhaps because the Mac I use is weaker than the Windows Desktop, whenever I try to upload code to the Metro that is wired to something pulling high voltage, the Metro does not appear as an option to connect to. I did not realize my computer was the issue, so I tried to wire a battery pack to the Metro to provide power for the Stepper Motor. I had plugged the 9V wire to VIN and the black wire into GND. Luckily, I had not put in any batteries, as Gudrun informed me that what I had done would smoke the H-bridge.
+From this assignment, I learned the trick to plug-in high voltage projects into my computer and one way not to smoke H-bridge. 
+
+## IR Sensors
+
+### Description & Code
+
+```python
+Code goes here
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+Compared to the earlier assignments, coordinating the IR sensor value with the neopixel output was relatively simple. However, I ran into an annoying issue with uploading code, where I would get an error that any CircuitPython function was not found. After spending awhile tinkering with extensions, I found a work-around: I directly opened the CircuitPython directory and edited the code.py file. While I haven't figured out how to properly fix this issue, I was able to complete the assignment effectively. I found that instead of using inverse logic, I could instead classify the ir_sensor as a pull down resistor, which makes the code logic cleaner. 
 
 ## NextAssignment
 
