@@ -349,6 +349,7 @@ Code goes here
 ```
 
 ### Evidence
+![Photointerruptor GIF](./images/PhotogateGIF.gif)
 
 ### Wiring
 
@@ -365,6 +366,7 @@ Code goes here
 ```
 
 ### Evidence
+![Rotary Encoder GIF](./images/RotaryGIF.gif)
 
 ### Wiring
 
@@ -381,8 +383,11 @@ Code goes here
 ```
 
 ### Evidence
+![Stepper Motor GIF](./images/StepperGIF.gif)
 
 ### Wiring
+<img src="./images/StepperWiring.png" alt="Stepper Wiring" width="75%">
+Made in Fritzing
 
 ### Reflection
 I struggled with regulating the voltage properly. Perhaps because the Mac I use is weaker than the Windows Desktop, whenever I try to upload code to the Metro that is wired to something pulling high voltage, the Metro does not appear as an option to connect to. I did not realize my computer was the issue, so I tried to wire a battery pack to the Metro to provide power for the Stepper Motor. I had plugged the 9V wire to VIN and the black wire into GND. Luckily, I had not put in any batteries, as Gudrun informed me that what I had done would smoke the H-bridge.
@@ -398,11 +403,15 @@ Code goes here
 ```
 
 ### Evidence
+![IR Sensor GIF](./images/IRGIF.gif)
 
 ### Wiring
+<img src="./images/IRWiring.png" alt="IR Sensor Wiring" width="75%">
+Made in Fritzing
 
 ### Reflection
 Compared to the earlier assignments, coordinating the IR sensor value with the neopixel output was relatively simple. However, I ran into an annoying issue with uploading code, where I would get an error that any CircuitPython function was not found. After spending awhile tinkering with extensions, I found a work-around: I directly opened the CircuitPython directory and edited the code.py file. While I haven't figured out how to properly fix this issue, I was able to complete the assignment effectively. I found that instead of using inverse logic, I could instead classify the ir_sensor as a pull down resistor, which makes the code logic cleaner. 
+
 
 ## NextAssignment
 
