@@ -386,7 +386,7 @@ Code goes here
 ![Stepper Motor GIF](./images/StepperGIF.gif)
 
 ### Wiring
-<img src="./images/StepperWiring.png" alt="Stepper Wiring" width="75%">
+<img src="./images/StepperWiring.png" alt="Stepper Wiring" width="25%">
 Made in Fritzing
 
 ### Reflection
@@ -406,7 +406,7 @@ Code goes here
 ![IR Sensor GIF](./images/IRGIF.gif)
 
 ### Wiring
-<img src="./images/IRWiring.png" alt="IR Sensor Wiring" width="75%">
+<img src="./images/IRWiring.png" alt="IR Sensor Wiring" width="25%">
 Made in Fritzing
 
 ### Reflection
