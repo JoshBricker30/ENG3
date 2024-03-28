@@ -271,19 +271,14 @@ This first prep assignment mimics the arguably easiest portion of the Onshape ce
 <table>
   <tr>
     <td>
-      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <img src="./images/singlepart1.png" alt="Configuration 1">
       <br>
-      <i>Isometric View of Hanger Bracket</i>
+      <i>Configuration 1 Isometric View</i>
     </td>
     <td>
-      <img src="./images/SideHanger.PNG" alt="Side View">
+      <img src="./images/singlepart2.png" alt="Configuration 3">
       <br>
-      <i>Side View</i>
-    </td>
-    <td>
-      <img src="./images/TopHanger.PNG" alt="Top View">
-      <br>
-      <i>Top View</i>
+      <i>Configuration 3 Isometric View</i>
     </td>
   </tr>
 </table>
@@ -309,19 +304,14 @@ For further practice before our Onshape exam, we had to create a Cylinder Assemb
 <table>
   <tr>
     <td>
-      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <img src="./images/multipart.png" alt="Isometric View">
       <br>
-      <i>Isometric View of Hanger Bracket</i>
+      <i>Isometric View</i>
     </td>
     <td>
-      <img src="./images/SideHanger.PNG" alt="Side View">
+      <img src="./images/multipartcross.png" alt="Cross Section View">
       <br>
-      <i>Side View</i>
-    </td>
-    <td>
-      <img src="./images/TopHanger.PNG" alt="Top View">
-      <br>
-      <i>Top View</i>
+      <i>Cross Section View</i>
     </td>
   </tr>
 </table>
