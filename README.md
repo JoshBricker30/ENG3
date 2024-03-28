@@ -342,7 +342,7 @@ Gudrun taught me a useful hack: In the assembley, instead of manually creating a
 
 ### Assignment Description
 
-This assignment is meant to imitate the 3rd portion of the modeling part of the Onshape exam, which tests our assembly skills. For this model, we had to assemble a functional locking plier, with a focus on having the correct rotation of the 
+This assignment is meant to imitate the 3rd portion of the modeling part of the Onshape exam, which tests our assembly skills. For this model, we had to assemble a functional locking plier, with a focus on having the correct rotation of the lower jaw. A;; 
 
 ### Evidence
 
