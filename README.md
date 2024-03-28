@@ -276,7 +276,7 @@ This first prep assignment mimics the arguably easiest portion of the Onshape ce
       <i>Configuration 1 Isometric View</i>
     </td>
     <td>
-      <img src="./images/singlepart2.png" alt="Configuration 3">
+      <img src="./images/singlepart3.png" alt="Configuration 3">
       <br>
       <i>Configuration 3 Isometric View</i>
     </td>
