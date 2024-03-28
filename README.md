@@ -1,4 +1,4 @@
-# Engineering 3 Documentation 
+a# Engineering 3 Documentation 
 
 ## Table of Contents
 * [Servo Control](#Servo_Control)
@@ -372,26 +372,21 @@ Gudrun taught me a useful hack: In the assembley, instead of manually creating a
 
 ### Assignment Description
 
-For further practice before our Onshape exam, we had to create a Cylinder Assembly using a multi-part studio. We were given 6 parts to model and 5 configurations to answer questions about. From Mr. Miller's hint, I know that this assignment is going to be highly similar to what we see on the exam, so I should practice this a couple times. 
+As preparation for our big robot arm project, we had to create a robot gripper model. This gripper had to close using one actuator, such as a servo, solenoid, or motor (I personally used a linear solenoid). The gripper's jaws must fully close, all parts must be able to be 3D printed/common materials, and the assembley must be able to be animated. 
 
 ### Evidence
 
 <table>
   <tr>
     <td>
-      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <img src="./images/clawclose.png" width = "40%">
       <br>
-      <i>Isometric View of Hanger Bracket</i>
+      <i>Closed View of Claw</i>
     </td>
     <td>
-      <img src="./images/SideHanger.PNG" alt="Side View">
+      <img src="./images/clawopen.png" width = "40%">
       <br>
-      <i>Side View</i>
-    </td>
-    <td>
-      <img src="./images/TopHanger.PNG" alt="Top View">
-      <br>
-      <i>Top View</i>
+      <i>Open View of Claw</i>
     </td>
   </tr>
 </table>
@@ -399,13 +394,11 @@ For further practice before our Onshape exam, we had to create a Cylinder Assemb
 
 ### Part Link 
 
-[Link to Onshape Document]()
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/fe9c015208e779996d7d37c3/w/aefe045f5d027d4d9f08dd2a/e/920475d3e318b5f8360e6fdf?renderMode=0&uiState=6605c4c687cd5e5b62bc4808)
 
 ### Reflection
 
-This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. Additionally, I found that instead of sketching circles and extruding, using the revolve tool, even for shapes that aren't seemingly cylinders at first glance, was much neater; I ended up using 3 revolves in the project!
-I also realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
-Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances spaces.
+This was by far the most difficult assignment in any Engineering assignment I've pursued. I had never seen a linear solenoid before, so I was intrigued and decided to create a solenoid-powered gripper. However, I had a laborious time trying to create an animate-able gripper; my first trials were unable to translate linear into rotational motion, so I experimented with multiple versions. Talking with Em, I realized that my mates weren't the issue, but that the dimensions weren't compatible. I had to increase the length of my bars so that they could rotate properly. I learned that it's important to design with intent in mind; as I had to constantly change dimensions, ensuring that all my parts were properly related significantly expedited the process.
 
 &nbsp;
 ## Photointerruptor
