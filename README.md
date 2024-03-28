@@ -264,7 +264,7 @@ The divet highlights the importance of good design practices; instead of making 
 
 ### Assignment Description
 
-In our first Onshape assignment, we had to create a hanger bracket merely from drawings, with no supplemental instructions. We had 3 views available: the top, side, and isometric view. This was also practice for me on what view to choose to start your first sketch on; because of the side looks concave while the top drawing is rectangular, it made sense to start with the side view. 
+This first prep assignment mimics the arguably easiest portion of the Onshape certification exam, which is the single part modeling. For the assignment, we had to create a V-block. The modeling was a good practice on using variables, as the real test will ask us to modify them to see if design intent was followed properly. 
 
 ### Evidence
 
@@ -298,11 +298,11 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 This assignment, while simple, was a good reminder that even though there are many different ways to build a part, there are methods that are much easier than others. For this assignment, I reaized I could expedite operations significantly if I built the part starting from the front view rather than the top; additionally, since the part is symmetric, I only needed to sketch the right part and I could mirror at the end for the complete structure. 
 While not recommended for the actual Onshape exam, I think the best way to do the multiple iterations of these parts is through configurations. As we can't check our answers after each question and submit them at all one go, if one of our earlier iterations turns out to be incorrect, I can easily revert back to an old configuration. 
 
-## Onshape Certification Prep Part 1 - Single Part
+## Onshape Certification Prep Part 2 - Multi Part Studio
 
 ### Assignment Description
 
-In our first Onshape assignment, we had to create a hanger bracket merely from drawings, with no supplemental instructions. We had 3 views available: the top, side, and isometric view. This was also practice for me on what view to choose to start your first sketch on; because of the side looks concave while the top drawing is rectangular, it made sense to start with the side view. 
+For further practice before our Onshape exam, we had to create a Cylinder Assembly using a multi-part studio. We were given 6 parts to model and 5 configurations to answer questions about. From Mr. Miller's hint, I know that this assignment is going to be highly similar to what we see on the exam, so I should practice this a couple times. 
 
 ### Evidence
 
@@ -329,7 +329,47 @@ In our first Onshape assignment, we had to create a hanger bracket merely from d
 
 ### Part Link 
 
-[Link to Onshape Document](https://cvilleschools.onshape.com/documents/cd78b8fa1f4fae5e57aa9c82/w/e451815e3ceae4b1d9177709/e/d6cd4c60769dd8532e4bef87)
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/e5f7e6c15a3166969e564087/w/e5f7d6b88446670bd7923096/e/144b3be689b086a5e61060bc?renderMode=0&uiState=6604da5a7b7d3d0f008f6560)
+
+### Reflection
+
+This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. Additionally, I found that instead of sketching circles and extruding, using the revolve tool, even for shapes that aren't seemingly cylinders at first glance, was much neater; I ended up using 3 revolves in the project!
+I also realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
+Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances.
+&nbsp;
+
+## Onshape Certification Prep Part 3 - Assemblies
+
+### Assignment Description
+
+This assignment is meant to imitate the 3rd portion of the modeling part of the Onshape exam, which tests our assembly skills. For this model, we had to assemble a functional locking plier, with a focus on having the correct rotation of the 
+
+### Evidence
+
+<table>
+  <tr>
+    <td>
+      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <br>
+      <i>Isometric View of Hanger Bracket</i>
+    </td>
+    <td>
+      <img src="./images/SideHanger.PNG" alt="Side View">
+      <br>
+      <i>Side View</i>
+    </td>
+    <td>
+      <img src="./images/TopHanger.PNG" alt="Top View">
+      <br>
+      <i>Top View</i>
+    </td>
+  </tr>
+</table>
+
+
+### Part Link 
+
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/fddbbe19126bce08a2ac4a05/w/6244426ae9e97e5905a80ac0/e/346769cba18575cac10f62ab)
 
 ### Reflection
 
@@ -338,10 +378,50 @@ I also realized grouping my sketches/operations into folders was a great way to 
 Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances spaces.
 &nbsp;
 
+## Robot Gripper
+
+### Assignment Description
+
+For further practice before our Onshape exam, we had to create a Cylinder Assembly using a multi-part studio. We were given 6 parts to model and 5 configurations to answer questions about. From Mr. Miller's hint, I know that this assignment is going to be highly similar to what we see on the exam, so I should practice this a couple times. 
+
+### Evidence
+
+<table>
+  <tr>
+    <td>
+      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <br>
+      <i>Isometric View of Hanger Bracket</i>
+    </td>
+    <td>
+      <img src="./images/SideHanger.PNG" alt="Side View">
+      <br>
+      <i>Side View</i>
+    </td>
+    <td>
+      <img src="./images/TopHanger.PNG" alt="Top View">
+      <br>
+      <i>Top View</i>
+    </td>
+  </tr>
+</table>
+
+
+### Part Link 
+
+[Link to Onshape Document]()
+
+### Reflection
+
+This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. Additionally, I found that instead of sketching circles and extruding, using the revolve tool, even for shapes that aren't seemingly cylinders at first glance, was much neater; I ended up using 3 revolves in the project!
+I also realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
+Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances spaces.
+
+&nbsp;
 ## Photointerruptor
 
 ### Description & Code
-Everytime the photointerruptor is triggered (optical switch activated by light blockage), I had to increment a counter and print the number to an LCD screen. 
+Everytime the photointerruptor is triggered (optical switch activated by light blockage), I had to increment a counter and print the number to an LCD screen. I then simulated "lag" by incrementing the counter only after 4 seconds of being interrupted. 
 
 ```python
 Code goes here
@@ -360,6 +440,8 @@ Both the wiring and code were intuitive for our first CircuitPython assignment o
 
 ### Description & Code
 
+For this assignment, I had to use a rotary encoder to control a menu-based traffic light, whichs menu is displayed on a LCD screen and light status is represented with the on-board NeoPixel LED. The encoder position corresponds to the cycle index of the menu items: stop, caution, and go. The LED turned red, yellow, or green depending on this menu status. 
+
 ```python
 Code goes here
 
@@ -376,6 +458,7 @@ I remember doing this assignment last year - nevertheless, this proved to be the
 ## Stepper Motors & Limit Switches
 
 ### Description & Code
+Using a stepper motor, I had to trigger a limit switch. If the stepper motor was initially rotating clockwise, once the attached arm hit the limit switch, the stepper motor had to rotate counterclockwise. This behavior should be repeated indefinitely. 
 
 ```python
 Code goes here
@@ -396,6 +479,8 @@ From this assignment, I learned the trick to plug-in high voltage projects into 
 ## IR Sensors
 
 ### Description & Code
+
+Using an IR sensor, I had to change the color of the on-board NeoPixel LED. Depending on whether the IR sensor sent a HIGH (an object is near) or LOW (nothing nearby) signal, the NeoPixel LED should turn red or green, respectively. 
 
 ```python
 Code goes here
