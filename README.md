@@ -304,12 +304,12 @@ For further practice before our Onshape exam, we had to create a Cylinder Assemb
 <table>
   <tr>
     <td>
-      <img src="./images/multipart.png" alt="Isometric View">
+      <img src="./images/multipart.png" alt="Isometric View" width = "40%">
       <br>
       <i>Isometric View</i>
     </td>
     <td>
-      <img src="./images/multipartcross.png" alt="Cross Section View">
+      <img src="./images/multipartcross.png" alt="Cross Section View" width = "40%>
       <br>
       <i>Cross Section View</i>
     </td>
@@ -339,12 +339,12 @@ This assignment is meant to imitate the 3rd portion of the modeling part of the 
 <table>
   <tr>
     <td>
-      <img src="./images/plier90.png" width = "25%>
+      <img src="./images/plier90.png" width = "40%>
       <br>
       <i>Closed Position of Pliers</i>
     </td>
     <td>
-      <img src="./images/plier30.png" width=="25%">
+      <img src="./images/plier30.png" width=="40%">
       <br>
       <i>Open Position of Pliers</i>
     </td>
@@ -371,12 +371,12 @@ As preparation for our big robot arm project, we had to create a robot gripper m
 <table>
   <tr>
     <td>
-      <img src="./images/clawclose.png" width = "40%">
+      <img src="./images/clawclose.png" width = "50%">
       <br>
       <i>Closed View of Claw</i>
     </td>
     <td>
-      <img src="./images/clawopen.png" width = "40%">
+      <img src="./images/clawopen.png" width = "50%">
       <br>
       <i>Open View of Claw</i>
     </td>
