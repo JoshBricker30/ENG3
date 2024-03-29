@@ -332,26 +332,21 @@ Gudrun taught me a useful hack: In the assembley, instead of manually creating a
 
 ### Assignment Description
 
-This assignment is meant to imitate the 3rd portion of the modeling part of the Onshape exam, which tests our assembly skills. For this model, we had to assemble a functional locking plier, with a focus on having the correct rotation of the lower jaw. A;; 
+This assignment is meant to imitate the 3rd portion of the modeling part of the Onshape exam, which tests our assembly skills. For this model, we had to assemble a functional locking plier, with a focus on having the correct rotation of the lower jaw.
 
 ### Evidence
 
 <table>
   <tr>
     <td>
-      <img src="./images/IsometricHanger.PNG" alt="Isometric View of Hanger Bracket">
+      <img src="./images/plier90.png" width = "25%>
       <br>
-      <i>Isometric View of Hanger Bracket</i>
+      <i>Closed Position of Pliers</i>
     </td>
     <td>
-      <img src="./images/SideHanger.PNG" alt="Side View">
+      <img src="./images/plier30.png" width=="25%">
       <br>
-      <i>Side View</i>
-    </td>
-    <td>
-      <img src="./images/TopHanger.PNG" alt="Top View">
-      <br>
-      <i>Top View</i>
+      <i>Open Position of Pliers</i>
     </td>
   </tr>
 </table>
@@ -359,14 +354,11 @@ This assignment is meant to imitate the 3rd portion of the modeling part of the 
 
 ### Part Link 
 
-[Link to Onshape Document](https://cvilleschools.onshape.com/documents/fddbbe19126bce08a2ac4a05/w/6244426ae9e97e5905a80ac0/e/346769cba18575cac10f62ab)
+[Link to Onshape Document](https://cvilleschools.onshape.com/documents/74a9dfd15eaa4f3c2f573840/w/a7d3e4e64318a4173065063a/e/7ac2d223ba977f855b953d02?renderMode=0&uiState=6605c9444c13ea6077d62c82)
 
 ### Reflection
-
-This was my first rodeo with the Boolean tool - I realized how much easier it is to use the "subtract" operation than to try to employ the "Use" tool and extrude when creating a hole in the plunger top. Additionally, I found that instead of sketching circles and extruding, using the revolve tool, even for shapes that aren't seemingly cylinders at first glance, was much neater; I ended up using 3 revolves in the project!
-I also realized grouping my sketches/operations into folders was a great way to keep organized, especially in complicated structures like this. 
-Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances spaces.
-&nbsp;
+I find assembley the most difficult part of the Onshape certification exam. In my opinion, I find Onshape's assembley features limited: I wish there was a way when setting limits to create conditions based on parallel mates - for example, I struggled with setting the minimum limit to being when the claw was closed. The only workaround I found was to artifically set a parallel mate, and then copy and paste the revolution degrees into the limit. However, because of inherent rounding, this is not perfectly precise.
+Another trick I learned is the "shift" shortcut when finding mates. I never knew you could mate the center of objects; Shrey taught me that if you press the shift key, you can easily mate the centers, a key tip considering most of the revolution mates in this assignment required this condition.
 
 ## Robot Gripper
 
@@ -415,6 +407,8 @@ Code goes here
 ![Photointerruptor GIF](./images/PhotogateGIF.gif)
 
 ### Wiring
+<img src="./images/photowiring.png" width="25%">
+Made in Fritzing
 
 ### Reflection
 Both the wiring and code were intuitive for our first CircuitPython assignment of the quarter. However, I ran into an issue where the LCD would show no output. I initially thought that it had to do with the contrast settings, but adjustment did nothing. I figured out that the system did not recognize the I2C address. To overcome this, I used code from here - https://learn.adafruit.com/scanning-i2c-addresses/circuitpython - to scan for I2C addresses to find where the LCD was at, which was 0x27. This scanning code will definitely help me find the correct I2C address in future assignments. 
@@ -434,6 +428,8 @@ Code goes here
 ![Rotary Encoder GIF](./images/RotaryGIF.gif)
 
 ### Wiring
+<img src="./images/rotarywiring.png" width="25%">
+Made in Fritzing
 
 ### Reflection
 I remember doing this assignment last year - nevertheless, this proved to be the most difficult CircuitPython assignment so far. I ran into the same I2C issue as previous, but I was able to use the address finder to overcome that hurdle. The main obstacle was getting the menu index to iterate and output correctly. When I first printed the messages to the screen and I tried to move to the "go" option, "goution" would print out. I realized that I wasn't clearing the 2nd row when I switched states. For a workaround, I printed out the option along with 8 spaces to effectively clear the previous output. 
