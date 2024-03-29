@@ -6,6 +6,7 @@ a# Engineering 3 Documentation
 * [Motor_Control](#Motor_Control)
 * [Hanger_Bracket](#Hanger_Bracket)
 * [Swing_Arm](#Swing_Arm)
+* [Single Part](#Single_Part)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -260,7 +261,7 @@ I had many difficulties with obtaining the correct mass. For the longer configur
 
 The divet highlights the importance of good design practices; instead of making components needlessly interconnected, it's better to make the parts in a modular process. If I had done the circle hole on a different sketch, then the constriants wouldn't have freaked out. 
 
-## Onshape Certification Prep Part 1 - Single Part
+## Single_Part
 
 ### Assignment Description
 
@@ -344,7 +345,7 @@ This assignment is meant to imitate the 3rd portion of the modeling part of the 
       <i>Closed Position of Pliers</i>
     </td>
     <td>
-      <img src="./images/plier30.png" width=="40%">
+      <img src="./images/plier30.png" width="40%">
       <br>
       <i>Open Position of Pliers</i>
     </td>
