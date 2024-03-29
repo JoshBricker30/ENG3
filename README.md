@@ -309,7 +309,7 @@ For further practice before our Onshape exam, we had to create a Cylinder Assemb
       <i>Isometric View</i>
     </td>
     <td>
-      <img src="./images/multipartcross.png" alt="Cross Section View" width = "40%>
+      <img src="./images/multipartcross.png" alt="Cross Section View" width = "40%">
       <br>
       <i>Cross Section View</i>
     </td>
