@@ -400,7 +400,47 @@ This was by far the most difficult assignment in any Engineering assignment I've
 Everytime the photointerruptor is triggered (optical switch activated by light blockage), I had to increment a counter and print the number to an LCD screen. I then simulated "lag" by incrementing the counter only after 4 seconds of being interrupted. 
 
 ```python
-Code goes here
+import time
+import board
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+
+
+photointerrupter = digitalio.DigitalInOut(board.D8) # Set up the photointerrupter using digital pin 8.
+photointerrupter.direction = digitalio.Direction.INPUT# Set the photointerrupter as an input.
+photointerrupter.pull = digitalio.Pull.UP # Use the internal pull-up resistor. 
+
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+lcd.set_cursor_pos(0,0)
+lcd.print("# of interrupts: ")
+
+# Set the photointerrupter_state as None for now!
+photointerrupter_state = None   
+interrupt_counter = 0
+
+# Set up 2nd row of LCD for interrupt counter printing
+lcd.set_cursor_pos(1,0)
+lcd.print("0")
+
+now = time.monotonic()  # Time in seconds since power on
+
+while True:
+    if (now + 4) < time.monotonic(): # Print to LCD screen # of interrupts with a 4 second delay
+        lcd.set_cursor_pos(1,0)
+        lcd.print(str(interrupt_counter))
+        now = time.monotonic()
+        
+    # If the photointerrupter is interrupted, set the photointerrupter_state to "interrupted" and increment counter
+    if photointerrupter.value and photointerrupter_state is None:
+        photointerrupter_state = "interrupted"
+        interrupt_counter += 1 # Increase a variable called interrupt_counter by 1.
+        print("Photointerrupter was interrupted, counter: ", interrupt_counter) # Print the number of interrupts to the LCD. 
+        
+    # When not interrupted, set the state back to None
+    if not photointerrupter.value and photointerrupter_state == "interrupted":
+        photointerrupter_state = None
+        print("Photointerrupter state reset")
 
 ```
 
@@ -421,8 +461,53 @@ Both the wiring and code were intuitive for our first CircuitPython assignment o
 For this assignment, I had to use a rotary encoder to control a menu-based traffic light, whichs menu is displayed on a LCD screen and light status is represented with the on-board NeoPixel LED. The encoder position corresponds to the cycle index of the menu items: stop, caution, and go. The LED turned red, yellow, or green depending on this menu status. 
 
 ```python
-Code goes here
+import rotaryio
+import board
+import neopixel
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
 
+# Init LCD + encoder
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+enc = rotaryio.IncrementalEncoder(board.D4, board.D3, divisor=2)
+
+# Init LED
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+led[0] = (255, 0, 0)
+
+# Init Button
+button = digitalio.DigitalInOut(board.D2)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+button_state = None
+
+# Set up menus + LCD
+menu = ["stop", "caution", "go"]
+ledmenu = [(255, 0, 0), (255, 255, 0), (0, 255, 0)]
+menu_index = None
+
+lcd.set_cursor_pos(0,0)
+lcd.print("Push For: ")
+
+# Main loop: stop light menu
+while True:
+    # Update menu index
+    if(menu_index != enc.position % 3):
+        menu_index = enc.position % 3
+        lcd.set_cursor_pos(1,0)
+        lcd.print(menu[menu_index]+"     ")    
+    
+    # Debounce button + select menu item
+    if not button.value and button_state is None:
+        button_state = "pressed"
+    if button.value and button_state == "pressed":
+        print("Button is pressed")
+        button_state = None
+        
+        # Change LED according to menu
+        led[0] = ledmenu[menu_index]
 ```
 
 ### Evidence
@@ -441,8 +526,66 @@ I remember doing this assignment last year - nevertheless, this proved to be the
 Using a stepper motor, I had to trigger a limit switch. If the stepper motor was initially rotating clockwise, once the attached arm hit the limit switch, the stepper motor had to rotate counterclockwise. This behavior should be repeated indefinitely. 
 
 ```python
-Code goes here
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper
 
+DELAY = 0.01 # amount of time between each step taken by motor
+STEPS = 100 # half full rotation, number of steps taken by motor
+
+coils = ( # the four metal coils in motor
+    digitalio.DigitalInOut(board.D9),  # A1
+    digitalio.DigitalInOut(board.D10), # A2
+    digitalio.DigitalInOut(board.D11), # B1
+    digitalio.DigitalInOut(board.D12), # B2
+)
+
+for coil in coils: # set direction of each coil
+    coil.direction = digitalio.Direction.OUTPUT
+
+# stepper motor instance, allows for easy control of each coil
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+motor_direction = "FORWARD"
+
+# Checks if limit switch is pressed and changes motor direction correspondingly
+async def catch_pin_transitions(pin):
+    global motor_direction #makes sure we can edit it in function
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed: # if limit switch pressed, turn around motor
+                    print("Limit Switch was pressed.")
+                    motor_direction = "BACKWARD"
+             
+                elif event.released:
+                    print("Limit Switch was released.") # otherwise motor goes as normal
+                    motor_direction = "FORWARD"
+            await asyncio.sleep(0)
+
+# Makes the motor move in desired direction
+async def run_motor():
+    global motor_direction
+    while True:
+        if motor_direction == "FORWARD":
+            for step in range(STEPS): #iterate half a full rotation
+                motor.onestep(style=stepper.DOUBLE) #moves motor clockwise, double provides more torque 
+                await asyncio.sleep(DELAY)
+        elif motor_direction == "BACKWARD":
+            for step in range(STEPS):
+                motor.onestep(direction=stepper.BACKWARD, style=stepper.DOUBLE) # moves motor counterclockwise
+                await asyncio.sleep(DELAY) # means current task is waiting, lets other code run
+
+async def main(): # main function that will initiate both limit and motor control/check 
+    interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2)) # limit switch check
+    motor_task = asyncio.create_task(run_motor()) # motor control
+
+    await asyncio.gather(interrupt_task, motor_task)
+
+asyncio.run(main())
 ```
 
 ### Evidence
@@ -463,8 +606,37 @@ From this assignment, I learned the trick to plug-in high voltage projects into 
 Using an IR sensor, I had to change the color of the on-board NeoPixel LED. Depending on whether the IR sensor sent a HIGH (an object is near) or LOW (nothing nearby) signal, the NeoPixel LED should turn red or green, respectively. 
 
 ```python
-Code goes here
+ import board
+import neopixel
+import digitalio
+import time
 
+# Set up the IR Sensor using digital pin 2.
+ir_sensor = digitalio.DigitalInOut(board.D2)
+
+# Set the photointerrupter as an input.
+ir_sensor.direction = digitalio.Direction.INPUT
+
+# Use the internal pull-up resistor
+# Down reverses logic
+ir_sensor.pull = digitalio.Pull.DOWN
+
+# Initialize the on-board neopixel and set the brightness.
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+
+# While loop runs the code inside continuously.
+while True:
+    # If an object is near the IR sensor (sensor is LOW):
+    if ir_sensor.value: # I used pull down resistor so I don't need not
+        # set LED color to RED
+        led[0] = (255, 0, 0)
+    else:
+        # If nothing is near the IR sensor (sensor is HIGH):
+        # set LED color to GREEN
+        led[0] = (0, 255, 0)
+        
+    time.sleep(0.1) # small delay 
 ```
 
 ### Evidence
