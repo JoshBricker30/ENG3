@@ -1,4 +1,4 @@
-a# Engineering 3 Documentation 
+# Engineering 3 Documentation 
 
 ## Table of Contents
 * [Servo Control](#Servo_Control)
