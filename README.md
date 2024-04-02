@@ -372,12 +372,12 @@ As preparation for our big robot arm project, we had to create a robot gripper m
 <table>
   <tr>
     <td>
-      <img src="./images/clawclose.png" width = "50%">
+      <img src="./images/clawclose2.png" width = "60%">
       <br>
       <i>Closed View of Claw</i>
     </td>
     <td>
-      <img src="./images/clawopen.png" width = "50%">
+      <img src="./images/clawopen2.png" width = "60%">
       <br>
       <i>Open View of Claw</i>
     </td>
