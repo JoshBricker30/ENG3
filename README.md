@@ -6,7 +6,12 @@
 * [Motor_Control](#Motor_Control)
 * [Hanger_Bracket](#Hanger_Bracket)
 * [Swing_Arm](#Swing_Arm)
-* [Single Part](#Single_Part)
+* [Onshape Certification Prep Part 1: Single Part](#onshape-certification-prep-part-1-single-part)
+* [Onshape Certification Prep Part 2: Multi Part Studio](#onshape-certification-prep-part-2-multi-part-studio)
+* [Onshape Certification Prep Part 3: Assemblies](#onshape-certification-prep-part-3-assemblies)
+* [Robot Gripper, Photointerruptor, Rotary Encoder & LCD](#robot-gripper-photointerruptor-rotary-encoder--lcd)
+* [Stepper Motors & Limit Switches](#stepper-motors--limit-switches)
+* [IR Sensors](#ir-sensors)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -261,7 +266,7 @@ I had many difficulties with obtaining the correct mass. For the longer configur
 
 The divet highlights the importance of good design practices; instead of making components needlessly interconnected, it's better to make the parts in a modular process. If I had done the circle hole on a different sketch, then the constriants wouldn't have freaked out. 
 
-## Single_Part
+## Onshape Certification Prep Part 1: Single Part
 
 ### Assignment Description
 
@@ -294,7 +299,7 @@ This first prep assignment mimics the arguably easiest portion of the Onshape ce
 This assignment, while simple, was a good reminder that even though there are many different ways to build a part, there are methods that are much easier than others. For this assignment, I reaized I could expedite operations significantly if I built the part starting from the front view rather than the top; additionally, since the part is symmetric, I only needed to sketch the right part and I could mirror at the end for the complete structure. 
 While not recommended for the actual Onshape exam, I think the best way to do the multiple iterations of these parts is through configurations. As we can't check our answers after each question and submit them at all one go, if one of our earlier iterations turns out to be incorrect, I can easily revert back to an old configuration. 
 
-## Onshape Certification Prep Part 2 - Multi Part Studio
+## Onshape Certification Prep Part 2: Multi Part Studio
 
 ### Assignment Description
 
@@ -329,7 +334,7 @@ I also realized grouping my sketches/operations into folders was a great way to 
 Gudrun taught me a useful hack: In the assembley, instead of manually creating and mating 4 instances of the bolt, since each one is spaced 90 degrees apart, I can use the Circular pattern tool and created 4 instances.
 &nbsp;
 
-## Onshape Certification Prep Part 3 - Assemblies
+## Onshape Certification Prep Part 3: Assemblies
 
 ### Assignment Description
 
