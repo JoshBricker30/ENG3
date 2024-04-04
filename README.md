@@ -347,7 +347,7 @@ This assignment is meant to imitate the 3rd portion of the modeling part of the 
 <table>
   <tr>
     <td>
-      <img src="./images/plier90.png" width = "40%>
+      <img src="./images/plier90.png" width = "40%">
       <br>
       <i>Closed Position of Pliers</i>
     </td>
